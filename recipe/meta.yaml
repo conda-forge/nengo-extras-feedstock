@@ -25,6 +25,10 @@ requirements:
     - nengo
     - numpy
     - python >=3.6
+    - pillow
+    - pyopencl
+    - mako
+    - nengo-ocl
 
 test:
   imports:
