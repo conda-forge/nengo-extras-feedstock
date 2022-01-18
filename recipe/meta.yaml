@@ -1,5 +1,5 @@
 {% set name = "nengo-extras" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nengo-extras-{{ version }}.tar.gz
-  sha256: eb36c725f6fd10498338e446905486bf63e6b02aa71de216d163e4895397e36f
+  sha256: 234f41d777a6f5085378ed4f8145326b735b3ba34f8a392f7357ed6547414fa6
 
 build:
   number: 0
@@ -25,6 +25,10 @@ requirements:
     - nengo
     - numpy
     - python >=3.6
+    - pillow
+    - pyopencl
+    - mako
+    - nengo-ocl
 
 test:
   imports:
