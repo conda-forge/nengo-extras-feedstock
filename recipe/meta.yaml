@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nengo-extras-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nengo-extras-{{ version }}.tar.gz
   sha256: 234f41d777a6f5085378ed4f8145326b735b3ba34f8a392f7357ed6547414fa6
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -19,12 +19,12 @@ requirements:
   host:
     - numpy
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - matplotlib-base
     - nengo
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - pillow
     - pyopencl
     - mako
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nengo/nengo-extras
